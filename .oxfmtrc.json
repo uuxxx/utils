@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["unicorn", "typescript", "oxc", "import"],
+  "categories": {
+    "correctness": "error",
+    "perf": "error",
+    "suspicious": "error"
+  },
+  "rules": {
+    "curly": "error",
+    "typescript/no-explicit-any": "error",
+    "typescript/explicit-function-return-type": "error"
+  },
+  "ignorePatterns": ["dist/", "node_modules/", "pnpm-lock.yaml"]
+}
