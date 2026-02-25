@@ -1,0 +1,67 @@
+{
+  "name": "@uuxxx/utils",
+  "version": "0.0.3",
+  "description": "Javascript library with utilities for solving common problems",
+  "keywords": [
+    "js",
+    "ts",
+    "utilities",
+    "utils"
+  ],
+  "homepage": "https://github.com/uuxxx/utils/blob/main/README.md",
+  "license": "MIT",
+  "author": "Artem Tryapichnikov <golysheeet@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uuxxx/utils.git"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./event-emitter": {
+      "types": "./dist/event-emitter.d.ts",
+      "default": "./dist/event-emitter.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rolldown -c rolldown.config.ts",
+    "changeset:version": "changeset version && git add --all && git commit -m 'chore: bump'",
+    "changeset:publish": "changeset publish",
+    "test:watch": "vitest",
+    "test:run": "vitest run",
+    "format:fix": "oxfmt --write",
+    "format:check": "oxfmt --check",
+    "lint:check": "oxlint --type-aware && pnpm format:check",
+    "lint:fix": "oxlint --type-aware --fix && pnpm format:fix",
+    "types:check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.8",
+    "@types/node": "^25.3.2",
+    "lefthook": "^2.1.1",
+    "oxfmt": "^0.35.0",
+    "oxlint": "^1.50.0",
+    "oxlint-tsgolint": "^0.15.0",
+    "rolldown": "1.0.0-rc.6",
+    "rolldown-plugin-dts": "^0.22.2",
+    "rollup-plugin-swc3": "^0.12.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "engines": {
+    "node": ">= 20",
+    "pnpm": ">= 10"
+  },
+  "packageManager": "pnpm@10.6.5"
+}
